@@ -6,7 +6,8 @@ export default async function HomePage() {
   return (
     <main className="flex flex-wrap gap-2">
       <h1>Hello world</h1>
-      <Button>Click Me</Button>
+      <Button variant="destructive">Click Me</Button>
+   
     </main>
   );
 }

@@ -2,6 +2,7 @@ import "~/styles/globals.css";
 
 import { Manrope } from "next/font/google";
 import { cn } from "~/lib/utils";
+import { BaseLayout } from "~/components/layout/base-layout";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -16,18 +17,21 @@ export const metadata = {
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </head>
       <body
         className={cn(
           "min-h-screen bg-background font-manrope antialiased",
           manrope.variable,
         )}
       >
-        {children}
+        <BaseLayout>{children}</BaseLayout>
       </body>
     </html>
   );
